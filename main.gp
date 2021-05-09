@@ -62,6 +62,7 @@ job() = {
     lll = m * qflll(m); \\ Base réduite du réseau
     for(j = 1, l,
       sol = shiftvec(lll[,j])[1..-2]; \\ On ne garde pas le dernier élément qui doit valoir 0 pour être solution
+      s = concat([0],sol);
       if(check_col(sol) && check_eq(s), printmessage(s); return)); \\ Si la colonne est de la bonne forme et vérifie l'égalité sac à dos
 
     \\ Cas où m[1] = 1
