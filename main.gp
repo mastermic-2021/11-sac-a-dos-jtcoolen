@@ -66,7 +66,7 @@ job() = {
       if(check_col(sol) && check_eq(s), printmessage(s); return)); \\ Si la colonne est de la bonne forme et vérifie l'égalité sac à dos
 
     \\ Cas où m[1] = 1
-    m[l, l] = - B * (c - k1 + i * N); \\ On retranche le poids b[1]
+    m[l, l] = - B * (c - k1 + i * N); \\ On retranche le poids k[1] du chiffré, car on a une solution pour k[2],...,k[140] sans le poids k[1]
     lll = m * qflll(m);
     for(j = 1, l,
       sol = shiftvec(lll[,j])[1..-2];
