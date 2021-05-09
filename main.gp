@@ -44,10 +44,10 @@ m[l, l] = - B * c;
 for(i = 1, l - 1, m[l, i] = B * k_red[i]);
 for(i = 1, l - 1, m[i, l] = -1/2); \\ cette constante "translate" le réseau pour privilégier les m[i] dans {0,1}, plutôt que {-1,0,1}
 
-\\ teste que la colonne satisfait l'équation sac à dos avec le chiffré comme capacité
+\\ teste que la colonne satisfait l'équation sac à dos avec le chiffré comme capacité (mod N)
 check_eq(col) = ((col * k~) % N == c);
 
-\\ vérifie que la colonne est fait de deux éléments répétés. On attend 0 et une constante lambda
+\\ vérifie que la colonne est faite de deux éléments répétés. On attend 0 et une constante lambda
 check_col(c) = (length(Set(c)) == 2 && setsearch(Set(c), 0)); \\ On passe c dans un ensemble (Set), qui conserve les éléments distincts
 
 \\ attaque "low density", possible car la densité est 0.94 < 0.9408
